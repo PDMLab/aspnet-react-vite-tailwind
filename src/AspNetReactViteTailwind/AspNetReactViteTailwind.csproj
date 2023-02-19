@@ -7,7 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="clientapp" />
+      <Folder Include="ui" />
     </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="6.0.13" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <SpaRoot>ui/</SpaRoot>
+    </PropertyGroup>
 
 </Project>
