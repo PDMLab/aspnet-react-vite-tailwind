@@ -25,12 +25,16 @@ windows:
   - app:
       layout: even-vertical
       panes:
-        - server:
-            - printf '\033]2;%s\033\\' 'app'
+        - aspnet-server:
+            - printf '\033]2;%s\033\\' 'aspnet-server'
             - cd src/AspNetReactViteTailwind
             - kill -9 $(lsof -t -i tcp:5001)
             - kill -9 $(lsof -t -i tcp:5000)
-            - dotnet watch run
+            - dotnet watch run --no-restore
+        - vite-server:
+            - printf '\033]2;%s\033\\' 'vite-server'
+            - cd src/AspNetReactViteTailwind/ui
+            - yarn dev
         - workspace:
             - printf '\033]2;%s\033\\' 'app-workspace'
             - cd src/AspNetReactViteTailwind
